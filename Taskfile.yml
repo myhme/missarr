@@ -47,20 +47,20 @@ tasks:
         go build \
         -mod vendor \
         -trimpath \
-        -ldflags "-s -w -X github.com/l3uddz/{{.APP}}/build.Version=${VERSION} -X github.com/l3uddz/{{.APP}}/build.GitCommit=${GIT_COMMIT} -X github.com/l3uddz/{{.APP}}/build.Timestamp=${TIMESTAMP}" \
+        -ldflags "-s -w -X github.com/myhme/{{.APP}}/build.Version=${VERSION} -X github.com/myhme/{{.APP}}/build.GitCommit=${GIT_COMMIT} -X github.com/myhme/{{.APP}}/build.Timestamp=${TIMESTAMP}" \
         ../../cmd/{{.APP}}
 
   release:
     desc: Generate a release, but don't publish
     cmds:
-      - goreleaser --skip-validate --skip-publish --rm-dist
+      - goreleaser release --skip=publish
 
   snapshot:
     desc: Generate a snapshot release
     cmds:
-      - goreleaser --snapshot --skip-publish --rm-dist
+      - goreleaser --snapshot --clean
 
   publish:
     desc: Generate a release, and publish
     cmds:
-      - goreleaser --rm-dist
+      - goreleaser release

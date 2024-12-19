@@ -1,5 +1,6 @@
 # https://goreleaser.com
 project_name: missarr
+version: 2
 
 # Build
 builds:
@@ -17,9 +18,9 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X "github.com/l3uddz/missarr/build.Version={{ .Version }}"
-      - -X "github.com/l3uddz/missarr/build.GitCommit={{ .ShortCommit }}"
-      - -X "github.com/l3uddz/missarr/build.Timestamp={{ .Timestamp }}"
+      - -X "github.com/myhme/missarr/build.Version={{ .Version }}"
+      - -X "github.com/myhme/missarr/build.GitCommit={{ .ShortCommit }}"
+      - -X "github.com/myhme/missarr/build.Timestamp={{ .Timestamp }}"
     flags:
       - -trimpath
     ignore:
@@ -46,7 +47,7 @@ checksum:
 
 # Snapshot
 snapshot:
-  name_template: "{{ .Major }}.{{ .Minor }}.{{ .Patch }}-dev+{{ .Branch }}"
+  version_template: "{{ .Major }}.{{ .Minor }}.{{ .Patch }}-dev+{{ .Branch }}"
 
 # Changelog
 changelog:
