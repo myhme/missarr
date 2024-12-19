@@ -5,7 +5,7 @@
 
 # Missarr
 
-missarr sends search requests for missing episodes to Sonarr
+missarr sends search requests for missing episodes to Sonarr (this repo is for arm64 only)
 
 ## Table of contents
 
