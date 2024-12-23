@@ -17,3 +17,5 @@ jobs:
           owner: l3uddz
           base: master
           head: master
+          auto_approve: true
+          auto_merge: true
